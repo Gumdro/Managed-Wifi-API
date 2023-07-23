@@ -1306,7 +1306,12 @@ namespace NativeWifi
 			/// </summary>
 			[MarshalAs(UnmanagedType.ByValArray, SizeConst = 32)]
 			public byte[] SSID;
-		}
+
+            public override string ToString()
+            {
+                return Encoding.ASCII.GetString(SSID, 0, (int)SSIDLength);
+            }
+        }
 
 		/// <summary>
 		/// Defines an 802.11 PHY and media type.
